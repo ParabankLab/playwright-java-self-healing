@@ -1,0 +1,71 @@
+{
+  "user": [
+    {
+      "name": "john",
+      "password": "demo"
+    },
+    {
+      "name": "non_existent_user_123",
+      "password": "abc456"
+    }
+  ],
+  "regData": [
+    {
+      "firstname": "John",
+      "lastname": "Doe",
+      "address": "123 Main St",
+      "city": "Anytown",
+      "state": "Anystate",
+      "zipCode": "12345",
+      "phoneCode": "555-1234",
+      "ssn": "123-45-6789",
+      "username": "johndoe123",
+      "password": "password123"
+    }
+  ],
+  "accounts": [
+    "12345",
+    "12456",
+    "12567",
+    "12678",
+    "12789",
+    "12900",
+    "13011",
+    "13122",
+    "13233",
+    "13344",
+    "54321"
+  ],
+  "transferAccountData": [
+    {
+      "id": 99999,
+      "fromAccountId": 13344,
+      "type": "SAVINGS",
+      "fromBalance": 1231.10,
+      "toBalance": 100.00,
+      "transferAmount": 500.00,
+      "toAccountId": 13011,
+      "totalSum": 1692.67,
+      "fromAfterTrBalance": 731.10,
+      "toAfterTrBalance": "600.00"
+    }
+  ],
+  "requestLoanData": [
+    {
+      "id": 99999,
+      "accountId": 13344,
+      "type": "SAVINGS",
+      "fromBalance": 1231.10,
+      "toBalance": 3231.10,
+      "loanAmount": 2000.00,
+      "downPayment": 200.00,
+      "totalSum": 3692.67
+    }
+  ],
+  "mockAccountData": [
+    {
+      "amount": 55000.00,
+      "balance": 55100.00
+    }
+  ]
+}
