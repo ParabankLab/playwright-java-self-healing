@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Run Self-Healing Tests') {
             steps {
-                sh 'mvn test -DsuiteXmlFile=src/test/resources/testng.xml'
+                bat 'mvn test -DsuiteXmlFile=src/test/resources/testng.xml'
             }
             post {
                 always {
