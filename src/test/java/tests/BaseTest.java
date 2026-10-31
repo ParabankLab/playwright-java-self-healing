@@ -7,9 +7,12 @@ import com.microsoft.playwright.BrowserType;
 import com.playwright.framework.core.SelfHealingPage;
 import com.playwright.framework.pages.HomePage;
 import com.playwright.framework.pages.OverviewPage;
+import io.qameta.allure.testng.AllureTestNg;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 
+@Listeners({AllureTestNg.class})
 public class BaseTest {
     protected Playwright playwright;
     protected Browser browser;

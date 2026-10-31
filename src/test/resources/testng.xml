@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="ParaBank Regression Suite">
 
+
     <test name="UI and API Tests">
         <packages>
             <package name="com.playwright.framework.tests"/>
