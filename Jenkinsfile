@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clean & Build') {
             steps {
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
         stage('Run Self-Healing Tests') {
