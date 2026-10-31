@@ -1,4 +1,4 @@
-package controller.util;
+package com.playwright.framework.util;
 
 import io.qameta.allure.internal.shadowed.jackson.databind.JsonNode;
 import io.qameta.allure.internal.shadowed.jackson.databind.ObjectMapper;

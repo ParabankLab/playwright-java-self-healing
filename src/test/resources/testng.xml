@@ -4,7 +4,7 @@
 
     <test name="UI and API Tests">
         <packages>
-            <package name="controller.tests"/>
+            <package name="com.playwright.framework.tests"/>
         </packages>
     </test>
 

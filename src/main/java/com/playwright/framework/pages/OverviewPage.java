@@ -1,10 +1,9 @@
-package view.pages;
+package com.playwright.framework.pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
-import com.microsoft.playwright.options.WaitUntilState;
-import controller.util.ParaBankUtils;
+import com.playwright.framework.util.ParaBankUtils;
 
 public class OverviewPage {
     private Page page;

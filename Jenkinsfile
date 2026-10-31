@@ -1,47 +1,23 @@
 pipeline {
     agent any
 
-    environment {
-        // Forces Playwright to use an accessible directory for browser binaries
-        PLAYWRIGHT_BROWSERS_PATH = "${WORKSPACE}/ms-playwright"
-    }
-
     stages {
-        stage('Checkout') {
+        stage('Clean & Build') {
             steps {
-                checkout scm
+                sh 'mvn clean compile'
             }
         }
-
-        stage('Install Playwright Browsers') {
+        stage('Run Self-Healing Tests') {
             steps {
-                // Installs the binaries directly into the workspace-mapped path
-                bat 'mvn exec:java -Dexec.mainClass="com.microsoft.playwright.CLI" -Dexec.args="install"'
+                sh 'mvn test -DsuiteXmlFile=src/test/resources/testng.xml'
             }
-        }
-
-        stage('Build & Test') {
-            steps {
-                bat 'mvn clean test'
+            post {
+                always {
+                    // Archive Allure results for telemetry reporting
+                    allure includeProperties: false,
+                           results: [[path: 'allure-results']]
+                }
             }
-        }
-    }
-
-    post {
-        always {
-            allure([
-                includeProperties: false,
-                jdk: '',
-                properties: [],
-                reportBuildPolicy: 'ALWAYS',
-                results: [[path: 'allure-results']]
-            ])
-        }
-        success {
-            echo 'Pipeline passed successfully! 🚀'
-        }
-        failure {
-            echo 'Pipeline failed. Check the Allure report for details.'
         }
     }
 }
