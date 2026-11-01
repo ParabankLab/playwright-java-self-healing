@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe0ec89-7381-432d-ad8e-01192f595737" name="Changes" comment="cleaning allure resports, results" />
+    <list default="true" id="2fe0ec89-7381-432d-ad8e-01192f595737" name="Changes" comment="fixin linux to win">
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793527032151</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fixin linux to win">
+      <option name="closed" value="true" />
+      <created>1793527141616</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1793527141616</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,7 +204,8 @@
     <MESSAGE value="adding fail when healed." />
     <MESSAGE value="adding fail when healed again." />
     <MESSAGE value="cleaning allure resports, results" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaning allure resports, results" />
+    <MESSAGE value="fixin linux to win" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixin linux to win" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

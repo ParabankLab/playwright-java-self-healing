@@ -4,8 +4,11 @@ pipeline {
     stages {
         stage('Clean Workspace Artifacts') {
             steps {
-                // Wipe old results so Allure never merges past runs
-                bat 'rd /s /q allure-results allure-report || true'
+                bat '''
+                    if exist allure-results rmdir /s /q allure-results
+                    if exist allure-report rmdir /s /q allure-report
+                    exit 0
+                '''
             }
         }
 
