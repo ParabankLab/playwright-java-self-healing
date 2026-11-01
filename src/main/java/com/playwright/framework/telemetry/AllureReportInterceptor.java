@@ -1,23 +1,31 @@
 package com.playwright.framework.telemetry;
 
 import io.qameta.allure.Allure;
+import io.qameta.allure.model.Status;
 
 public class AllureReportInterceptor {
 
-    /**
-     * Logs a self-healing event to the Allure report telemetry stream.
-     */
+    private static final ThreadLocal<Boolean> isHealed = ThreadLocal.withInitial(() -> false);
+
     public static void logHealedEvent(String originalSelector, String healedSelector) {
+        isHealed.set(true);
+
         String logMessage = String.format(
-                "⚠️ [Self-Healing Triggered]\n- Original Selector: %s\n- Healed Selector: %s\n- Status: SUCCESS (<200ms DOM Resolution)",
+                "⚠️ [Self-Healing Warning] Faulty locator '%s' has been successfully replaced with '%s' (<200ms DOM Resolution)",
                 originalSelector,
                 healedSelector
         );
 
-        // Attach details to Allure report
-        Allure.addAttachment("Self-Healing Action", "text/plain", logMessage);
+        System.out.println("\u001B[33m" + logMessage + "\u001B[0m");
+        Allure.addAttachment("Self-Healing Metadata", "text/plain", logMessage);
+        Allure.step("⚠️ Self-Healing Triggered: Faulty Locator Replaced", Status.BROKEN);
+    }
 
-        // Also log to console for CI/CD pipeline visibility
-        System.out.println(logMessage);
+    public static boolean wasHealed() {
+        return isHealed.get();
+    }
+
+    public static void reset() {
+        isHealed.remove();
     }
 }

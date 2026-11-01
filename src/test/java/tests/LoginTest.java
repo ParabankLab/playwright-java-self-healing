@@ -1,4 +1,4 @@
-package com.playwright.framework.tests;
+package tests;
 
 import com.playwright.framework.pages.HomePage;
 import io.qameta.allure.Description;

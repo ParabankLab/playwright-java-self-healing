@@ -2,10 +2,15 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="ParaBank Regression Suite">
 
+    <!-- Register your Self-Healing Test Listener here -->
+    <listeners>
+        <listener class-name="com.playwright.framework.telemetry.SelfHealingTestListener"/>
+    </listeners>
 
     <test name="UI and API Tests">
         <packages>
-            <package name="com.playwright.framework.tests"/>
+            <!--package name="com.playwright.framework.tests"/-->
+            <package name="tests"/>
         </packages>
     </test>
 
