@@ -2,22 +2,34 @@ pipeline {
     agent any
 
     stages {
-        stage('Clean & Build') {
+        stage('Clean Workspace Artifacts') {
             steps {
-                bat 'mvn clean compile'
+                // Wipe old results so Allure never merges past runs
+                bat 'rm -rf allure-results allure-report'
             }
         }
-        stage('Run Self-Healing Tests') {
+
+        stage('Build and Test') {
             steps {
-                bat 'mvn test -DsuiteXmlFile=src/test/resources/testng.xml'
+                // Always use 'clean test' to wipe target/ build artifacts
+                bat 'mvn clean test -DCI=true'
             }
-            post {
-                always {
-                    // Archive Allure results for telemetry reporting
-                    allure includeProperties: false,
-                           results: [[path: 'allure-results']]
-                }
+        }
+
+        stage('Generate Allure Report') {
+            steps {
+                // Generate the fresh report from the isolated results directory
+                allure includeProperties: false,
+                       jdk: '',
+                       results: [[path: 'target/allure-results']]
             }
+        }
+    }
+
+    post {
+        always {
+            // Optional: archive report artifacts if needed
+            cleanWs notFailBuild: true
         }
     }
 }
