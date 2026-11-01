@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe0ec89-7381-432d-ad8e-01192f595737" name="Changes" comment="fixin linux to win">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+    <list default="true" id="2fe0ec89-7381-432d-ad8e-01192f595737" name="Changes" comment="fixing create report">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/playwright/framework/telemetry/AllureReportInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/playwright/framework/telemetry/AllureReportInterceptor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793527226606</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fixing create report">
+      <option name="closed" value="true" />
+      <created>1793527425991</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1793527425991</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -214,7 +221,8 @@
     <MESSAGE value="adding fail when healed again." />
     <MESSAGE value="cleaning allure resports, results" />
     <MESSAGE value="fixin linux to win" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixin linux to win" />
+    <MESSAGE value="fixing create report" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing create report" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

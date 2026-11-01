@@ -17,7 +17,7 @@ public class AllureReportInterceptor {
         healedSelectorHolder.set(healedSelector);
 
         String logMessage = String.format(
-                "⚠️ [Self-Healing Warning] Faulty locator '%s' has been successfully replaced with '%s' (<200ms DOM Resolution)",
+                "⚠️ [Self-Healing Warning] Faulty locator '%s' should be replaced with '%s' (<200ms DOM Resolution)",
                 originalSelector,
                 healedSelector
         );
