@@ -24,15 +24,17 @@ pipeline {
                 // Generate the fresh report from the isolated results directory
                 allure includeProperties: false,
                        jdk: '',
-                       results: [[path: 'target/allure-results']]
+                       results: [[path: 'allure-results']]
             }
         }
     }
 
     post {
-        always {
-            // Optional: archive report artifacts if needed
-            cleanWs notFailBuild: true
+            always {
+                // Generate the Allure report even if the tests failed
+                allure includeProperties: false,
+                       jdk: '',
+                       results: [[path: 'target/allure-results']]
+            }
         }
-    }
 }
