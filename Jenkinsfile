@@ -29,12 +29,16 @@ pipeline {
         }
     }
 
-    post {
-            always {
-                // Generate the Allure report even if the tests failed
-                allure includeProperties: false,
-                       jdk: '',
-                       results: [[path: 'target/allure-results']]
-            }
-        }
+   post {
+    always {
+        allure([
+            commandline: 'allure', // Must match the exact name in Global Tool Configuration
+            includeProperties: false,
+            jdk: '',
+            properties: [],
+            reportBuildPolicy: 'ALWAYS',
+            results: [[path: 'target/allure-results']]
+        ])
+    }
+}
 }
